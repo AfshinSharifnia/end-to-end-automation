@@ -1,19 +1,13 @@
-const { test } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 
-// test("Browser playwright test", async ({ browser }) => {
-//   chrome - plugins / cookies;
-
-//   const context = await browser.newContext();
-
-//   const page = await context.newPage();
-
-//   await page.goto("https://Google.com");
-// });
-
-test.only("Page Playwright test1", async ({ page }) => {
+test("Page Playwright test1", async ({ page }) => {
   await page.goto("https://www.linkedin.com/");
+  console.log(await page.title());
 });
 
 test("Page Playwright test2", async ({ page }) => {
   await page.goto("https://www.google.com/");
+
+  console.log(await page.title());
+  await expect(page).toHaveTitle("Google");
 });
