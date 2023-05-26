@@ -1,16 +1,19 @@
 const { test } = require("@playwright/test");
 
-test("Browser playwright test", async ({ browser }) => {
-  chrome - plugins / cookies;
+// test("Browser playwright test", async ({ browser }) => {
+//   chrome - plugins / cookies;
 
-  const context = await browser.newContext();
+//   const context = await browser.newContext();
 
-  const page = await context.newPage();
+//   const page = await context.newPage();
 
-  await page.goto("https://Google.com");
+//   await page.goto("https://Google.com");
+// });
+
+test.only("Page Playwright test1", async ({ page }) => {
+  await page.goto("https://www.linkedin.com/");
 });
 
-
-test("Page Playwright test", async ({ page }) => {
-  page.goto("https://google.com");
+test("Page Playwright test2", async ({ page }) => {
+  await page.goto("https://www.google.com/");
 });
